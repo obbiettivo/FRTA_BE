@@ -1,0 +1,26 @@
+encrypt:
+  keyStore:
+    alias: aliaskey
+    location: file:certs/entges.frta.jks
+    password: <PASSWORD DEL KEYSTORE, COME IN CREAZIONE DEL KEYSTORE> 
+    secret: <PASSWORD DELLA CHIAVE, COME IN CREAZIONE DEL KEYSTORE>
+
+server:
+  port: 8080
+    
+spring:
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: jdbc:oracle:thin:@<INSERIRE INDIRIZZO IP>:<INSERIRE PORTA>:<INSERIRE SID>
+    username: <INSERIRE LO USER>
+    password: '{cipher}<INSERIRE LA PASSWORD CIFRATA>'
+    hikari:
+      minimumIdle: 5
+      maximumPoolSize: 50
+      idleTimeout: 30000
+      maxLifetime: 60000
+
+logging:
+  file: logs/application.log

@@ -1,0 +1,11 @@
+${Ansi.DEFAULT}
+${Ansi.GREEN}  _       ___   ____    ____       _ 
+${Ansi.GREEN} | |     |_ _| / ___|  |  _ \     / \   
+${Ansi.GREEN} | |      | |  \___ \  | |_) |   / _ \  
+${Ansi.GREEN} | |___   | |   ___) | |  __/   / ___ \ 
+${Ansi.GREEN} |_____| |___| |____/  |_|     /_/   \_\
+${Ansi.DEFAULT}
+${Ansi.RED} Application : ${application.title} ${application.version}
+${Ansi.RED} Java        : ${java.runtime.name} ${java.runtime.version}
+${Ansi.RED} Spring Boot : ${spring-boot.version}
+${Ansi.DEFAULT}

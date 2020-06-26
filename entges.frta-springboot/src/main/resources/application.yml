@@ -1,0 +1,43 @@
+server:
+  servlet:
+    context-path: /api
+  
+management:
+  endpoints:
+    enabled-by-default: false
+  endpoint:
+    health:
+      enabled: true
+
+spring:
+  application:
+    name: entges.frta
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connectionTestQuery: SELECT 1 FROM DUAL
+      autoCommit: false
+      poolName: entges.frtaPool
+  jpa:
+    show-sql: false
+    database: ORACLE
+    properties:
+      hibernate:         
+        dialect: org.hibernate.dialect.Oracle12cDialect
+  cloud:
+    config:
+      enabled: false
+
+swagger:
+  enable: true
+  entges.frta-info:
+    title: Titolo
+    description: Descrizione 
+    version:
+    termOfServiceUrl:
+    contact:
+      name:
+      url:
+      email:
+    license: Copyright Lombardia Informatica S.p.A.
+    licenseUrl:

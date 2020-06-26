@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    <artifactId>entges.frta</artifactId>
+    <groupId>it.lispa</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+	<artifactId>entges.frta-db</artifactId>
+	<packaging>zip</packaging>
+	<name>entges.frta-db</name>
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<sourceDirectory>src/main/sql</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>it.lispa.siss.maven-plugins</groupId>
+				<artifactId>custom-package-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>2.0.1</version>
+				<configuration>
+					<sourceDirectory>${project.build.directory}/${project.build.finalName}</sourceDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>scripts-rest-service</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>db-zip</goal>
+						</goals>
+						<configuration>
+							<db>REST-SERVICE</db>
+							<scripts>
+								<script>
+									<file>${basedir}/src/main/sql/001_CREATE_TABLESPACE_TS_RESTSERV.sql</file>
+									<schema>SYS</schema>
+									<operazione>CREATE TABLESPACE</operazione>
+									<oggetto>TABLE</oggetto>
+									<nomeOggetto>PROPERTIES</nomeOggetto>
+									<note>nessuna</note>
+								</script>
+								<script>
+									<file>${basedir}/src/main/sql/002_CREATE_USER_RESTSERV.sql</file>
+									<schema>SYS</schema>
+									<operazione>CREATE USER</operazione>
+									<oggetto>USER</oggetto>
+									<nomeOggetto>RESTSERV</nomeOggetto>
+									<note>nessuna</note>
+								</script>
+								<script>
+									<file>${basedir}/src/main/sql/003_RESTSERV_CREATE_TABLE_CAR.sql</file>
+									<schema>RESTSERV</schema>
+									<operazione>CREATE TABLE</operazione>
+									<oggetto>TABLE</oggetto>
+									<nomeOggetto>CAR</nomeOggetto>
+									<note>nessuna</note>
+								</script>
+							</scripts>
+							<summary>
+								<appName>oracle</appName>
+							</summary>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+<licenses>
+    <license>
+      <name>Ariaspa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Ariaspa per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>

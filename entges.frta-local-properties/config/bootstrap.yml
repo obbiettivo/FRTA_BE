@@ -1,0 +1,26 @@
+encrypt:
+  keyStore:
+    alias: aliaskey
+    location: file:certs/keystore.jks
+    password: storepass
+    secret: keypass
+
+server:
+  port: 8080
+    
+spring:
+  cloud:
+    config:
+      enabled: false
+  datasource:
+    url: jdbc:oracle:thin:@<IP>:<PORT>:<SID>
+    username: restserv
+    password: restserv
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 5
+      idleTimeout: 30000
+      maxLifetime: 60000
+
+logging:
+  file: logs/application.log
