@@ -75,4 +75,12 @@
 # Il doppio asterisco ** esegue il match di zero o più directory
 #logs/**/error.log
 
-entges.frta-angular/node_modules/
+node_modules/
+package-lock.json
+.idea/
+entges.frta-springboot/target/
+logs/
+shutdown.pid
+target/
+entges.frta-properties/src/main/resources/bootstrap.yml
+pom.xml

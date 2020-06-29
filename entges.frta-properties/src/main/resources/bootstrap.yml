@@ -1,26 +1,29 @@
-encrypt:
-  keyStore:
-    alias: aliaskey
-    location: file:certs/entges.frta.jks
-    password: <PASSWORD DEL KEYSTORE, COME IN CREAZIONE DEL KEYSTORE> 
-    secret: <PASSWORD DELLA CHIAVE, COME IN CREAZIONE DEL KEYSTORE>
+#encrypt:
+#  keyStore:
+#   alias: aliaskey
+#    location: file:certs/entges.frta.jks
+#    password: <PASSWORD DEL KEYSTORE, COME IN CREAZIONE DEL KEYSTORE>
+#    secret: <PASSWORD DELLA CHIAVE, COME IN CREAZIONE DEL KEYSTORE>
 
 server:
-  port: 8080
-    
+  port: 9090
+  address: localhost
+
 spring:
   cloud:
     config:
       enabled: false
   datasource:
-    url: jdbc:oracle:thin:@<INSERIRE INDIRIZZO IP>:<INSERIRE PORTA>:<INSERIRE SID>
-    username: <INSERIRE LO USER>
-    password: '{cipher}<INSERIRE LA PASSWORD CIFRATA>'
+    url: jdbc:oracle:thin:@10.202.107.23:1527:TR02
+    username: sga7at
+    password: sga7atit_2012
     hikari:
       minimumIdle: 5
       maximumPoolSize: 50
       idleTimeout: 30000
       maxLifetime: 60000
+  jpa:
+    show-sql: true
 
 logging:
   file: logs/application.log
