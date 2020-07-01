@@ -38,7 +38,7 @@ public class IstanzaEsito {
 
 	@Id
 	@Column(name = "ID_FLUSSO")
-	private Integer idFlusso;
+	private Long idFlusso;
 
 	@Column(name = "SEPA_ORNGL_MSG_ID")
 	private String sepaOrnglMsgId;
@@ -71,11 +71,11 @@ public class IstanzaEsito {
 	@Column(name = "ID_ISTANZA")
 	private Integer idIstanza;
 
-	public Integer getIdFlusso() {
+	public Long getIdFlusso() {
 		return idFlusso;
 	}
 
-	public void setIdFlusso(Integer idFlusso) {
+	public void setIdFlusso(Long idFlusso) {
 		this.idFlusso = idFlusso;
 	}
 
