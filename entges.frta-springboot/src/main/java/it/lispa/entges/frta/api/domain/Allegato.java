@@ -2,44 +2,12 @@ package it.lispa.entges.frta.api.domain;
 
 /**
  * 
- * classe Allegato
- * 
- *
+ * classe Allegato estende AllegatoTable (TGA7AT_PDT_ALLEGATO)
  */
-public class Allegato {
+public class Allegato extends AllegatoTable{
 
-	private Integer idAllegato;
-	private byte[] fileAllegato;
-	private String tipoAllegato;
+
 	private Istanza istanza;
-	private String filename;
-
-	public Allegato() {
-	}
-
-	public Integer getIdAllegato() {
-		return idAllegato;
-	}
-
-	public void setIdAllegato(Integer idAllegato) {
-		this.idAllegato = idAllegato;
-	}
-
-	public String getTipoAllegato() {
-		return tipoAllegato;
-	}
-
-	public void setTipoAllegato(String tipoAllegato) {
-		this.tipoAllegato = tipoAllegato;
-	}
-
-	public byte[] getFileAllegato() {
-		return fileAllegato;
-	}
-
-	public void setFileAllegato(byte[] fileAllegato) {
-		this.fileAllegato = fileAllegato;
-	}
 
 	public Istanza getIstanza() {
 		return istanza;
@@ -49,12 +17,10 @@ public class Allegato {
 		this.istanza = istanza;
 	}
 
-	public String getFilename() {
-		return filename;
+	@Override
+	public String toString() {
+		return "Allegato{" +
+				"istanza=" + istanza +
+				'}';
 	}
-
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-
 }

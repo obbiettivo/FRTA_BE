@@ -1,28 +1,69 @@
 package it.lispa.entges.frta.api.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
+/***
+ * table: TGA7_TRI_INTERESSI
+ *
+ * IDINTERESSI	NUMBER
+ * TASSO	NUMBER
+ * DATAINIZIO	DATE
+ * DATAFINE	DATE
+ * IDUTENTECREAZIONE	NUMBER
+ * DATACREAZIONE	DATE
+ * IDUTENTEMODIFICA	NUMBER
+ * DATAMODIFICA	DATE
+ * IDUTENTEELIMINAZIONE	NUMBER
+ * DATAELIMINAZIONE	DATE
+ * FLAGSTATO	NUMBER(1,0)
+ * ***/
+@Entity
+@Table(name = "TGA7_TRI_INTERESSI")
 public class Interesse {
-	private Integer idInteressi;
+
+	@Id
+	@Column(name = "IDINTERESSI")
+	private Long idInteressi;
+
+	@Column(name = "TASSO")
 	private Double tasso;
+
+	@Column(name = "DATAINIZIO")
 	private Date dataInizio;
+
+	@Column(name = "DATAFINE")
 	private Date dataFine;
+
+	@Column(name = "IDUTENTECREAZIONE")
 	private Integer idUtenteCreazione;
+
+	@Column(name = "DATACREAZIONE")
 	private Date dataCreazione;
+
+	@Column(name = "IDUTENTEMODIFICA")
 	private Integer idUtenteModifica;
+
+	@Column(name = "DATAMODIFICA")
 	private Date dataModifica;
+
+	@Column(name = "IDUTENTEELIMINAZIONE")
 	private Integer idUtenteEliminazione;
+
+	@Column(name = "DATAELIMINAZIONE")
 	private Date dataEliminazione;
+
+	@Column(name = "FLAGSTATO")
 	private Integer flagStato;
 
-	public Interesse() {
-	}
-
-	public Integer getIdInteressi() {
+	public Long getIdInteressi() {
 		return idInteressi;
 	}
 
-	public void setIdInteressi(Integer idInteressi) {
+	public void setIdInteressi(Long idInteressi) {
 		this.idInteressi = idInteressi;
 	}
 
@@ -104,5 +145,22 @@ public class Interesse {
 
 	public void setFlagStato(Integer flagStato) {
 		this.flagStato = flagStato;
+	}
+
+	@Override
+	public String toString() {
+		return "Interesse{" +
+				"idInteressi=" + idInteressi +
+				", tasso=" + tasso +
+				", dataInizio=" + dataInizio +
+				", dataFine=" + dataFine +
+				", idUtenteCreazione=" + idUtenteCreazione +
+				", dataCreazione=" + dataCreazione +
+				", idUtenteModifica=" + idUtenteModifica +
+				", dataModifica=" + dataModifica +
+				", idUtenteEliminazione=" + idUtenteEliminazione +
+				", dataEliminazione=" + dataEliminazione +
+				", flagStato=" + flagStato +
+				'}';
 	}
 }
